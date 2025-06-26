@@ -1,0 +1,14 @@
+# Swaylock
+exec swayidle -w \
+    timeout 600 'swaylock --screenshots --clock --indicator --effect-blur=7x5 --daemonize' \
+    timeout 660 'swaymsg "output * dpms off"' \
+    resume 'swaymsg "output * dpms on"' \
+    before-sleep 'swaylock --screenshots --clock --indicator --effect-blur=7x5 --daemonize'
+
+input "2:8:AlpsPS/2_ALPS_DualPoint_TouchPad" {
+    events disabled
+}
+
+input "2:8:AlpsPS/2_ALPS_DualPoint_Stick" {
+    events disabled
+}
